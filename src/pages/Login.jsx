@@ -12,7 +12,7 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
 
-    const responce = await fetch("https://blog-server-7hw0.onrender.com/login", {
+    const responce = await fetch("https://blog-server-azure.vercel.app/login", {
       method: "POST",
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',

@@ -6,7 +6,7 @@ function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() =>{
-     fetch('https://blog-server-7hw0.onrender.com/profile',{
+     fetch('https://blog-server-azure.vercel.app/profile',{
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{

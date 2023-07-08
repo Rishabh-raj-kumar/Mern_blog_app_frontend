@@ -11,7 +11,7 @@ function Register() {
     e.preventDefault();
 
     try{
-      const responce = await fetch('https://blog-server-7hw0.onrender.com/register',{
+      const responce = await fetch('https://blog-server-azure.vercel.app/register',{
       method : 'POST',
       body : JSON.stringify({ username, password, email}),
     })
