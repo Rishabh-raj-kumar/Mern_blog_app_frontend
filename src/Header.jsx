@@ -6,13 +6,19 @@ function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() =>{
+    try{
      fetch('https://mern-blog-app-server-mauve.vercel.app/profile',{
+      headers : {'content-type' : 'application/json'},
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{
         setUserInfo(userinfo);
       })
      })
+    }
+    catch(err){
+      console.log(err)
+    }
   },[])
 
   function logOut(){
