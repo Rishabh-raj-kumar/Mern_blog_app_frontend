@@ -11,8 +11,9 @@ function Register() {
     e.preventDefault();
 
     try{
-      const responce = await fetch('https://mern-blog-app-server-mauve.vercel.app/register',{ mode: 'cors' },{
+      const responce = await fetch('https://mern-blog-app-server-mauve.vercel.app/register',{
       method : 'POST',
+      mode: "cors",
       body : JSON.stringify({ username, password, email}),
     })
 

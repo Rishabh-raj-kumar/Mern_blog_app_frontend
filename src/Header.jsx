@@ -7,6 +7,7 @@ function Header() {
 
   useEffect(() =>{
      fetch('https://mern-blog-app-server-mauve.vercel.app/profile',{
+      
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{
