@@ -6,7 +6,7 @@ function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() =>{
-     fetch('https://blog-server-azure.vercel.app/profile',{
+     fetch('https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/profile',{
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{
@@ -16,7 +16,7 @@ function Header() {
   },[])
 
   function logOut(){
-    fetch('https://blog-server-7hw0.onrender.com/logout',{
+    fetch('https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/logout',{
       credentials : 'include',
       method : 'POST',
     })

@@ -7,7 +7,7 @@ function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   //we need to fetch parameter of id.
   const {id} = useParams();
-  fetch(`https://blog-server-azure.vercel.app/post/${id}`)
+  fetch(`https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/post/${id}`)
   .then((resp) =>{
     resp.json().then((postinfo) =>{
       setPostInfo(postinfo);
