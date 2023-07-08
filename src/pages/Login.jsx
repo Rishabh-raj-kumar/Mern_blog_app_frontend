@@ -14,9 +14,12 @@ function Login() {
 
     const responce = await fetch("https://blog-server-7hw0.onrender.com/login", {
       method: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTION",
+        "Content-Type": "application/json"
+     },
       body: JSON.stringify({ email, username, password }),
-      headers: { "Content-Type": "application/json",
-      "Access-Control-Allow-Origin" : "https://blog-server-7hw0.onrender.com" },
       credentials : 'include',
     });
 

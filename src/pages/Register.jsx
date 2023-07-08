@@ -13,8 +13,12 @@ function Register() {
     try{
       const responce = await fetch('https://blog-server-7hw0.onrender.com/register',{
       method : 'POST',
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTION",
+        "Content-Type": "application/json"
+     },
       body : JSON.stringify({ username, password, email}),
-      headers : {'Content-Type':'application/json'},
     })
 
     if(responce.status === 200){

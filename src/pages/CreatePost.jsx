@@ -40,6 +40,11 @@ function CreatePost() {
 
       const responce = await fetch('https://blog-server-7hw0.onrender.com/post',{
         method : 'POST',
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, OPTION",
+          "Content-Type": "application/json"
+       },
         body : data,
         credentials : 'include',
       });
