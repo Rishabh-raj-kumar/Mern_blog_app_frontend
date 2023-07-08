@@ -38,7 +38,7 @@ function CreatePost() {
       data.set('file',file[0]);
       data.set('content',content);
 
-      const responce = await fetch('https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/post',{
+      const responce = await fetch('/post',{
         method : 'POST',
         body : data,
         credentials : 'include',

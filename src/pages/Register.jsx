@@ -11,7 +11,7 @@ function Register() {
     e.preventDefault();
 
     try{
-      const responce = await fetch('https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/register',{
+      const responce = await fetch('/register',{
       method : 'POST',
       body : JSON.stringify({ username, password, email}),
     })

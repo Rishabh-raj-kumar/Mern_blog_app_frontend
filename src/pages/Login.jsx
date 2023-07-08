@@ -12,7 +12,7 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
 
-    const responce = await fetch("https://blog-server-86dk7l0pn-rishabh-raj-kumar.vercel.app/login", {
+    const responce = await fetch("/login", {
       method: "POST",
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',
