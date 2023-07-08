@@ -13,7 +13,9 @@ function Register() {
     try{
       const responce = await fetch('https://mern-blog-app-server-mauve.vercel.app/register',{
       method : 'POST',
-      headers : {'Access-Control-Allow-Origin' : '*'},
+      mode : "cors",
+      headers : {'Access-Control-Allow-Origin' : '*',
+      'content-type' : 'application/json'},
       body : JSON.stringify({ username, password, email}),
     })
 
