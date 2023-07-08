@@ -6,7 +6,7 @@ function Header() {
   const {setUserInfo,userInfo} = useContext(UserContext);
 
   useEffect(() =>{
-     fetch('/profile',{
+     fetch('https://mern-blog-app-server-mauve.vercel.app/profile',{
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{
@@ -16,7 +16,7 @@ function Header() {
   },[])
 
   function logOut(){
-    fetch('/logout',{
+    fetch('https://mern-blog-app-server-mauve.vercel.app/logout',{
       credentials : 'include',
       method : 'POST',
     })
