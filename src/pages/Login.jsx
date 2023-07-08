@@ -12,10 +12,11 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
 
-    const responce = await fetch("http://localhost:8080/login", {
+    const responce = await fetch("https://blog-server-7hw0.onrender.com/login", {
       method: "POST",
       body: JSON.stringify({ email, username, password }),
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+      "Access-Control-Allow-Origin" : "https://blog-server-7hw0.onrender.com" },
       credentials : 'include',
     });
 

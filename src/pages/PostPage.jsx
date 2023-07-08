@@ -7,7 +7,7 @@ function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   //we need to fetch parameter of id.
   const {id} = useParams();
-  fetch(`http://localhost:8080/post/${id}`)
+  fetch(`https://blog-server-7hw0.onrender.com/post/${id}`)
   .then((resp) =>{
     resp.json().then((postinfo) =>{
       setPostInfo(postinfo);

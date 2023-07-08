@@ -5,7 +5,7 @@ function IndexPage() {
   const [posts,setPosts] = useState([]);
 
   useEffect(() =>{
-     fetch('http://localhost:8080/post').then(responce =>{
+     fetch('https://blog-server-7hw0.onrender.com/post').then(responce =>{
       //responce.json is just a promise we had to solve it.
       responce.json().then((post) =>{
             // console.log(post)

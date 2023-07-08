@@ -38,7 +38,7 @@ function CreatePost() {
       data.set('file',file[0]);
       data.set('content',content);
 
-      const responce = await fetch('http://localhost:8080/post',{
+      const responce = await fetch('https://blog-server-7hw0.onrender.com/post',{
         method : 'POST',
         body : data,
         credentials : 'include',
