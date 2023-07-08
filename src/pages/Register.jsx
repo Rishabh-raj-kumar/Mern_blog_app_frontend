@@ -20,7 +20,7 @@ function Register() {
       alert('Registered successfully');
       setLoader(true);
     }else{
-      alert('Not Registered');
+      alert('Not Registered',responce);
     }
     }
     catch(err){
