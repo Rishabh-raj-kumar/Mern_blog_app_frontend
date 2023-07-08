@@ -12,8 +12,10 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
 
+    try{
     const responce = await fetch("https://mern-blog-app-server-mauve.vercel.app/login",{
       method: "POST",
+      mode : "cors",
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',
     });
@@ -27,7 +29,11 @@ function Login() {
     }else{
       alert('wrong credentials');
     }
-  };
+  }
+  catch(err){
+     console.log(err)
+  }
+}
 
   if(redirect){
     return <Navigate to={'/'}/>
