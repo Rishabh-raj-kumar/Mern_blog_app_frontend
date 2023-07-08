@@ -12,7 +12,7 @@ function Login() {
   const login = async (e) => {
     e.preventDefault();
 
-    const responce = await fetch("https://mern-blog-app-server-mauve.vercel.app/login", {
+    const responce = await fetch("https://mern-blog-app-server-mauve.vercel.app/login", { mode: 'cors' },{
       method: "POST",
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',
