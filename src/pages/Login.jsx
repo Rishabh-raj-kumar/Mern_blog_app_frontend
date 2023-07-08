@@ -15,7 +15,7 @@ function Login() {
     const responce = await fetch("https://mern-blog-app-server-mauve.vercel.app/login",{
       method: "POST",
       mode: "cors",
-      headers : {'Access-Control-Allow-Origin' : '*',
+      headers : {'Access-Control-Allow-Origin' : 'true',
       'content-type' : 'application/json'},
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',

@@ -7,7 +7,7 @@ function Header() {
 
   useEffect(() =>{
      fetch('https://mern-blog-app-server-mauve.vercel.app/profile',{
-      headers : {'Access-Control-Allow-Origin' : '*',
+      headers : {'Access-Control-Allow-Origin' : 'true',
       'content-type' : 'application/json'},
       credentials : 'include',
      }).then((responce) =>{
