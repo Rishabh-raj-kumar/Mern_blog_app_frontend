@@ -11,10 +11,10 @@ function Register() {
     e.preventDefault();
 
     try{
-      const responce = await fetch('https://blog-server-7hw0.onrender.com/register',{
+      const responce = await fetch('/register',{
       method : 'POST',
-      mode : "cors",
       body : JSON.stringify({ username, password, email}),
+      headers : {'Content-Type' : 'application/json'}
     })
 
     if(responce.status === 200){

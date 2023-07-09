@@ -5,7 +5,7 @@ function IndexPage() {
   const [posts,setPosts] = useState([]);
 
   useEffect(() =>{
-     fetch('https://mern-blog-app-server-mauve.vercel.app/post').then(responce =>{
+     fetch('/post').then(responce =>{
       //responce.json is just a promise we had to solve it.
       responce.json().then((post) =>{
             // console.log(post)

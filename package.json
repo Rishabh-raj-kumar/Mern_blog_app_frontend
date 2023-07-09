@@ -41,5 +41,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "proxy" : "https://mern-blog-app-server-gold.vercel.app"
 }

@@ -7,7 +7,7 @@ function Header() {
 
   useEffect(() =>{
     try{
-     fetch('https://mern-blog-app-server-mauve.vercel.app/profile',{
+     fetch('/profile',{
       headers : {'content-type' : 'application/json'},
       credentials : 'include',
      }).then((responce) =>{
@@ -22,7 +22,7 @@ function Header() {
   },[])
 
   function logOut(){
-    fetch('https://mern-blog-app-server-mauve.vercel.app/logout',{
+    fetch('/logout',{
       credentials : 'include',
       method : 'POST',
     })
