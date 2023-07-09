@@ -1,59 +1,72 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { UserContext } from './Usercontext'
-import { Navigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "./Usercontext";
+import { Navigate } from "react-router-dom";
 
 function Header() {
-  const {setUserInfo,userInfo} = useContext(UserContext);
+  const { setUserInfo, userInfo } = useContext(UserContext);
 
-  useEffect(() =>{
-    try{
-     fetch('https://mern-blog-app-server-gold.vercel.app/profile',{
-      credentials : 'include',
-     }).then((responce) =>{
-      responce.json().then(userinfo =>{
-        setUserInfo(userinfo);
-      })
-     })
+  useEffect(() => {
+    const isLoggedin = localStorage.getItem("isLoggedin");
+    if (isLoggedin === true) {
+      try {
+        fetch("https://mern-blog-app-server-gold.vercel.app/profile", {
+          credentials: "include",
+        }).then((responce) => {
+          responce.json().then((userinfo) => {
+            setUserInfo(userinfo);
+          });
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
-    catch(err){
-      console.log(err)
-    }
-  },[])
+  }, []);
 
-  function logOut(){
-    fetch('https://mern-blog-app-server-gold.vercel.app/logout',{
-      credentials : 'include',
-      method : 'POST',
-    })
+  function logOut() {
+    fetch("https://mern-blog-app-server-gold.vercel.app/logout", {
+      credentials: "include",
+      method: "POST",
+    });
     setUserInfo(null);
   }
 
   const username = userInfo?.username;
-  if(userInfo === null){
-    return <Navigate to={'/login'}/>
+  if (userInfo === null) {
+    return <Navigate to={"/login"} />;
   }
 
   return (
     <header className=" flex justify-between">
-        <a href="/" className=" text-2xl font-medium uppercase text-green-700">MyBlog</a>
-        <nav className=" flex gap-3">
-          {
-            username && (
-              <>
-               <a href="/create" className="uppercase font-medium text-lg">CREATE NEW POST</a>
-               <a className=" uppercase font-medium text-lg cursor-pointer" onClick={logOut}>LOG OUT</a>
-              </>
-            )}
-            {!username &&
-          (<>
-          <a href="/login" className="uppercase font-medium text-lg">LOGIN</a>
-          <a href="/register" className=" uppercase font-medium text-lg">Register</a>
+      <a href="/" className=" text-2xl font-medium uppercase text-green-700">
+        MyBlog
+      </a>
+      <nav className=" flex gap-3">
+        {username && (
+          <>
+            <a href="/create" className="uppercase font-medium text-lg">
+              CREATE NEW POST
+            </a>
+            <a
+              className=" uppercase font-medium text-lg cursor-pointer"
+              onClick={logOut}
+            >
+              LOG OUT
+            </a>
           </>
-          )
-          }
-        </nav>
-      </header>
-  )
+        )}
+        {!username && (
+          <>
+            <a href="/login" className="uppercase font-medium text-lg">
+              LOGIN
+            </a>
+            <a href="/register" className=" uppercase font-medium text-lg">
+              Register
+            </a>
+          </>
+        )}
+      </nav>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

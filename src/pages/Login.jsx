@@ -22,6 +22,7 @@ function Login() {
 
     if(responce.ok){
       alert('Login success');
+      localStorage.setItem("isLoggedin",true);
       console.log(responce);
       responce.json().then(userinfo =>{
         setUserInfo(userinfo);
