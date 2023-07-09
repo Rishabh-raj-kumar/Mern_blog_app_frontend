@@ -47,6 +47,8 @@ function CreatePost() {
       if(responce.ok){
         alert("Successfully created post");
         setRedirect(true);
+      }else{
+        alert('we are facing some problem in backend side. Please be patients while we give it a next update.')
       }
   }
 
