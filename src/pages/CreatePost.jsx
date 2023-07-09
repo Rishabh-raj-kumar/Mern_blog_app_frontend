@@ -41,7 +41,6 @@ function CreatePost() {
       const responce = await fetch('https://mern-blog-app-server-gold.vercel.app/post',{
         method : 'POST',
         body : data,
-        credentials : 'include',
       });
 
       // console.log( await responce.json());
