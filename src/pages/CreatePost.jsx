@@ -32,15 +32,16 @@ function CreatePost() {
       e.preventDefault();
 
       const data = new FormData();
-      data.set('title',title);
-      data.set('summary',summary);
-      //we have to pass only file not all content.
-      data.set('file',file[0]);
-      data.set('content',content);
-
+      data.append('title',title);
+      data.append('summary',summary);
+      data.append('content',content);
+      data.append('file',file[0]);
+      // data.set('content',content);
+    console.log(data);
       const responce = await fetch('https://mern-blog-app-server-gold.vercel.app/post',{
         method : 'POST',
         body : data,
+        credentials : 'include'
       });
 
       // console.log( await responce.json());
