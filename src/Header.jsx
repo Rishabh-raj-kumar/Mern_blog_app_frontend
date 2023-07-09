@@ -8,7 +8,6 @@ function Header() {
   useEffect(() =>{
     try{
      fetch('https://mern-blog-app-server-gold.vercel.app/profile',{
-      headers : {'content-type' : 'application/json'},
       credentials : 'include',
      }).then((responce) =>{
       responce.json().then(userinfo =>{
