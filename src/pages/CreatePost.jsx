@@ -38,7 +38,7 @@ function CreatePost() {
       data.set('file',file[0]);
       data.set('content',content);
 
-      const responce = await fetch('/post',{
+      const responce = await fetch('https://mern-blog-app-server-gold.vercel.app/post',{
         method : 'POST',
         mode: "cors",
         body : data,

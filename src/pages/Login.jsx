@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
 
     try{
-    const responce = await fetch("/login",{
+    const responce = await fetch("https://mern-blog-app-server-gold.vercel.app/login",{
       method: 'POST',
       body: JSON.stringify({ email, username, password }),
       credentials : 'include',
