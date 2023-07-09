@@ -7,7 +7,7 @@ function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   //we need to fetch parameter of id.
   const {id} = useParams();
-  fetch(`https://mern-blog-app-server-gold.vercel.app/post/${id}`)
+  fetch(`https://blog-server-7hw0.onrender.com/post/${id}`)
   .then((resp) =>{
     resp.json().then((postinfo) =>{
       setPostInfo(postinfo);
@@ -27,7 +27,7 @@ function PostPage() {
       </span>
       </div>
         <div className=' mx-auto w-2/3'>
-        <img src={'https://mern-blog-app-server-gold.vercel.app/'+postInfo.cover}/>
+        <img src={'https://blog-server-7hw0.onrender.com/'+postInfo.cover}/>
         </div>
         <p className=' text-center'>{postInfo.summary}</p>
         <div dangerouslySetInnerHTML={{__html : postInfo.content}} />
