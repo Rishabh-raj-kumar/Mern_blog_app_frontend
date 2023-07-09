@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../Header';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import {format} from 'date-fns'
 
 function PostPage() {
@@ -25,6 +25,13 @@ function PostPage() {
       {/* <p className=' w-fit bg-pink-200 px-3 rounded capitalize'>Author : {postInfo.author.username}</p> */}
       <p className=' w-fit px-3 rounded'>{format(new Date(postInfo.createdAt),'MMM d, yyyy HH:mm')}</p>
       </span>
+      <div>
+        <Link to={`/edit/${postInfo._id}`}>
+           <buton className=" bg-black px-4 p-1 text-white rounded">
+           Edit Post
+           </buton>
+        </Link>
+      </div>
       </div>
         <div className=' mx-auto w-2/3'>
         <img src={'https://mern-blog-app-server-gold.vercel.app/'+postInfo.cover}/>

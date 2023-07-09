@@ -8,6 +8,7 @@ import IndexPage from './pages/IndexPage';
 import { UserContextProvider } from './Usercontext';
 import CreatePost from './pages/CreatePost';
 import PostPage from './pages/PostPage';
+import EditPage from './pages/EditPage';
 
 const App = () =>{
   return(
@@ -30,6 +31,9 @@ const App = () =>{
         }/>
         <Route path={"/post/:id"} exact element={
           <PostPage />
+        }/>
+        <Route path={"/edit/:id"} exact element={
+          <EditPage />
         }/>
       </Routes>
     </Router>

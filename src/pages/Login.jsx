@@ -22,6 +22,7 @@ function Login() {
 
     if(responce.ok){
       alert('Login success');
+      console.log(responce);
       responce.json().then(userinfo =>{
         setUserInfo(userinfo);
         setRedirect(true);
